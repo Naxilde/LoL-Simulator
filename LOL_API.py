@@ -9,14 +9,15 @@ def index():
 
 @post('/Ficha')
 def event():
-  payloadCode={"locale":request.forms.get('Language'),'api_key':'RGAPI-35ED490A-18EE-498E-A4F2-CC663FEDF3AE','dataByld':'true','champListData':'info'}
+  mykey=key
+  payloadCode={"locale":request.forms.get('Language'),'api_key':mykey,'dataByld':'true','champListData':'info'}
   code=requests.get('https://euw1.api.riotgames.com/lol/static-data/v3/champions',params=payloadCode)
   cod = code.json()
   for c in cod['data']:
     if cod['data'][c]['name'] == request.forms.get('name'):
       ID = str(cod['data'][c]['id'])
 
-  payload = {"locale":request.forms.get('Language'),"champData":'stats','api_key':'RGAPI-35ED490A-18EE-498E-A4F2-CC663FEDF3AE'}
+  payload = {"locale":request.forms.get('Language'),"champData":'stats','api_key':mykey}
   URL = 'https://euw1.api.riotgames.com/lol/static-data/v3/champions/'+ID
   r=requests.get(URL,params=payload)
   if r.status_code == 200:
@@ -30,28 +31,27 @@ def com():
 
 @post('/Ficha2')
 def event():
-  payloadCode1={"locale":request.forms.get('Language'),'api_key':'RGAPI-35ED490A-18EE-498E-A4F2-CC663FEDF3AE','dataByld':'true','champListData':'info'}
+  payloadCode1={"locale":request.forms.get('Language'),'api_key':mykey,'dataByld':'true','champListData':'info'}
   code1=requests.get('https://euw1.api.riotgames.com/lol/static-data/v3/champions',params=payloadCode1)
   cod1 = code1.json()
   for c in cod1['data']:
     if cod1['data'][c]['name'] == request.forms.get('name1'):
       ID1 = str(cod1['data'][c]['id'])
 
-  payload = {"locale":request.forms.get('Language'),"champData":'stats','api_key':'RGAPI-35ED490A-18EE-498E-A4F2-CC663FEDF3AE'}
+  payload = {"locale":request.forms.get('Language'),"champData":'stats','api_key':mykey}
   URL1 = 'https://euw1.api.riotgames.com/lol/static-data/v3/champions/'+ID1
   r1=requests.get(URL1,params=payload)
   if r1.status_code == 200:
     doc1 = r1.json()
     stats1 = doc1['stats']
 
-  payloadCode2={"locale":request.forms.get('Language'),'api_key':'RGAPI-35ED490A-18EE-498E-A4F2-CC663FEDF3AE','dataByld':'true','champListData':'info'}
+  payloadCode2={"locale":request.forms.get('Language'),'api_key':mykey,'dataByld':'true','champListData':'info'}
   code2=requests.get('https://euw1.api.riotgames.com/lol/static-data/v3/champions',params=payloadCode2)
   cod2 = code2.json()
   for c in cod2['data']:
     if cod2['data'][c]['name'] == request.forms.get('name2'):
       ID2 = str(cod2['data'][c]['id'])
 
-  payload = {"locale":request.forms.get('Language'),"champData":'stats','api_key':'RGAPI-35ED490A-18EE-498E-A4F2-CC663FEDF3AE'}
   URL2 = 'https://euw1.api.riotgames.com/lol/static-data/v3/champions/'+ID2
   r2=requests.get(URL2,params=payload)
   if r2.status_code == 200:
