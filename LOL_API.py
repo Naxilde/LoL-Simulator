@@ -9,7 +9,7 @@ def index():
 
 @post('/Ficha')
 def event():
-  mykey=key
+  mykey=KEY
   payloadCode={"locale":request.forms.get('Language'),'api_key':mykey,'dataByld':'true','champListData':'info'}
   code=requests.get('https://euw1.api.riotgames.com/lol/static-data/v3/champions',params=payloadCode)
   cod = code.json()
