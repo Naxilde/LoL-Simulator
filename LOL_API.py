@@ -75,7 +75,7 @@ def event():
   r3=requests.get('https://euw1.api.riotgames.com/lol/static-data/v3/items',params=payload3)
   doc3 = r3.json()
   for o in doc3:
-	if doc3['data'][o]['name'] == name3.title():
+	if !doc3['data'][o]['name'] == name3.title():
 		ID3 = str(doc3['data'][o]['id'])
 
   payload4={"locale":request.forms.get('Language'),'api_key':mykey,'itemData':'all'}
