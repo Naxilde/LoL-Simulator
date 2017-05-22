@@ -39,7 +39,7 @@
           <li><a href="https://developer.riotgames.com/">API web</a></li>
         </ul>
         <h1>Useful Info</h1>
-        <p>You can put anything you like in the sidebar. Latest news, useful links, images, contact information. Anything you think the visitor will find useful.</p>
+        <p>The language by default is en_UK</p>
       </div>
       <div id="content">
         <!-- insert the page content here -->
