@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from bottle import route, run, request, redirect, post, get, template, static_file
+from bottle import route, run, request, redirect, post, get, template, static_file, error
 import requests
 import json
 from sys import argv
