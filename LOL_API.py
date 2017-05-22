@@ -2,6 +2,9 @@
 from bottle import route, run, request, redirect, post, get, template, static_file
 import requests
 import json
+from sys import argv
+import os
+mykey=os.environ["KEY"]
 
 @get('/')
 def index():
@@ -9,7 +12,6 @@ def index():
 
 @post('/Ficha')
 def event():
-  mykey=key
   payloadCode={"locale":request.forms.get('Language'),'api_key':mykey,'dataByld':'true','champListData':'info'}
   code=requests.get('https://euw1.api.riotgames.com/lol/static-data/v3/champions',params=payloadCode)
   cod = code.json()
@@ -64,5 +66,4 @@ def server_static(filepath):
     return static_file(filepath, root='static')
 
 
-run(host='localhost', port=8080, debug=True)
-#bootstrap misaelangelo
+run(host='0.0.0.0', port=argv[1])
