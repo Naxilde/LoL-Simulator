@@ -16,7 +16,7 @@ def event():
   code=requests.get('https://euw1.api.riotgames.com/lol/static-data/v3/champions',params=payloadCode)
   cod = code.json()
   for c in cod['data']:
-    if cod['data'][c]['name'] == request.forms.get('name'):
+    if cod['data'][c]['name'].title() == request.forms.get('name'):
       ID = str(cod['data'][c]['id'])
 
   payload = {"locale":request.forms.get('Language'),"champData":'stats','api_key':mykey}
@@ -37,7 +37,7 @@ def event():
   code1=requests.get('https://euw1.api.riotgames.com/lol/static-data/v3/champions',params=payloadCode1)
   cod1 = code1.json()
   for c in cod1['data']:
-    if cod1['data'][c]['name'] == request.forms.get('name1'):
+    if cod1['data'][c]['name'].title() == request.forms.get('name1'):
       ID1 = str(cod1['data'][c]['id'])
 
   payload = {"locale":request.forms.get('Language'),"champData":'stats','api_key':mykey}
@@ -51,7 +51,7 @@ def event():
   code2=requests.get('https://euw1.api.riotgames.com/lol/static-data/v3/champions',params=payloadCode2)
   cod2 = code2.json()
   for c in cod2['data']:
-    if cod2['data'][c]['name'] == request.forms.get('name2'):
+    if cod2['data'][c]['name'].title() == request.forms.get('name2'):
       ID2 = str(cod2['data'][c]['id'])
 
   URL2 = 'https://euw1.api.riotgames.com/lol/static-data/v3/champions/'+ID2
