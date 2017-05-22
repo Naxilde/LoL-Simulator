@@ -71,7 +71,7 @@ def obj():
 @post('/Object')
 def event():
   name3 = request.forms.get('ID')
-  payload3 = {"locale":request.forms.get('Language'),'api_key':mykey,'itemData':'stats'}
+  payload3 = {"locale":request.forms.get('Language'),'api_key':mykey,'itemListData':'stats'}
   r3=requests.get('https://euw1.api.riotgames.com/lol/static-data/v3/items',params=payload3)
   doc3 = r3.json()
   for o in doc3:
