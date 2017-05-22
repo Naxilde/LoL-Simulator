@@ -67,7 +67,7 @@ def obj():
 @post('/Object')
 def event():
   ID = request.forms.get('ID')
-  payload = {"locale":request.forms.get('Language'),'api_key':mykey,'itemData'="all"}
+  payload = {"locale":request.forms.get('Language'),'api_key':mykey,'itemData'='all'}
   URL = 'https://euw1.api.riotgames.com/lol/static-data/v3/items/'+ID
   o=requests.get(URL,params=payload)
   if o.status_code == 200:
