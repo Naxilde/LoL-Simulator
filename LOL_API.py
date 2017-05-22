@@ -70,20 +70,6 @@ def obj():
 
 @post('/Object')
 def event():
-	
-	  name1 = request.forms.get('name1')
-  payloadCode1={"locale":request.forms.get('Language'),'api_key':mykey,'dataByld':'true','champListData':'info'}
-  code1=requests.get('https://euw1.api.riotgames.com/lol/static-data/v3/champions',params=payloadCode1)
-  cod1 = code1.json()
-  for c in cod1['data']:
-    if cod1['data'][c]['name'] == name1.title():
-      ID1 = str(cod1['data'][c]['id'])
-	
-	
-	
-	
-	
-	
   name3 = request.forms.get('ID')
   payload3 = {'itemListData':'stats','locale':request.forms.get('Language'),'api_key':mykey}
   r3=requests.get('https://euw1.api.riotgames.com/lol/static-data/v3/items',params=payload3)
