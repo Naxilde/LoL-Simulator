@@ -63,19 +63,29 @@ def event():
     doc2 = r2.json()
     stats2 = doc2['stats']
     return template('Comparator2.tpl',Info1=stats1,campeon1=doc1['name'],Info2=stats2,campeon2=doc2['name'])
+
 @get("/Objects")
 def obj():
 	return template('Objects.tpl')
 
 @post('/Object')
 def event():
-  ID = request.forms.get('ID')
-  payload = {"locale":request.forms.get('Language'),'api_key':mykey,'itemData':'all'}
-  URL = 'https://euw1.api.riotgames.com/lol/static-data/v3/items/'+ID
-  o=requests.get(URL,params=payload)
-  if o.status_code == 200:
+  name3 = request.forms.get('ID')
+  payload3 = {"locale":request.forms.get('Language'),'api_key':mykey,'itemData':'all'}
+  URL3 = 'https://euw1.api.riotgames.com/lol/static-data/v3/items'
+  r3=requests.get(URL3,params=payload3)
+  if r3.status_code == 200:
     doc3 = o.json()
-    return template('Object.tpl',stats=doc3)
+    for o in doc3:
+	if doc3['data'][i]['name'] == name.title():
+	   	ID3 = str(doc3['data'][i])
+		
+    URL4 = 'https://euw1.api.riotgames.com/lol/static-data/v3/items/'+ID3
+    r4=requests.get(URL4,params=payload3)
+    if r4.status_code == 200:
+       doc4 = r4.json()
+       stats4 = doc4['stats']
+       return template('Object.tpl',stats=doc4)
 
 @route('/static/<filepath:path>')
 def server_static(filepath):
