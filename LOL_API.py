@@ -84,7 +84,6 @@ def event():
     r4=requests.get(URL4,params=payload3)
     if r4.status_code == 200:
        doc4 = r4.json()
-       stats4 = doc4['stats']
        return template('Object.tpl',stats=doc4)
 
 @route('/static/<filepath:path>')
