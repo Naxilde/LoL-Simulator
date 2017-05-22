@@ -72,13 +72,11 @@ def obj():
 def event():
   name3 = request.forms.get('ID')
   payload3 = {"locale":request.forms.get('Language'),'api_key':mykey,'itemData':'all'}
-  URL3 = 'https://euw1.api.riotgames.com/lol/static-data/v3/items'
-  r3=requests.get(URL3,params=payload3)
-  if r3.status_code == 200:
-    doc3 = r3.json()
-    for o in doc3:
-	if doc3['data'][o]['name'] == name3.title():
-	   	ID3 = str(doc3['data'][o])
+  r3=requests.get('https://euw1.api.riotgames.com/lol/static-data/v3/items',params=payload3)
+  doc3 = r3.json()
+  for o in doc3:
+     if doc3['data'][o]['name'] == name3.title():
+       ID3 = str(doc3['data'][o])
 		
     URL4 = 'https://euw1.api.riotgames.com/lol/static-data/v3/items/'+ID3
     r4=requests.get(URL4,params=payload3)
