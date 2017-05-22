@@ -2,6 +2,7 @@
 from bottle import route, run, request, redirect, post, get, template, static_file
 import requests
 import json
+from sys import argv
 
 @get('/')
 def index():
@@ -64,5 +65,4 @@ def server_static(filepath):
     return static_file(filepath, root='static')
 
 
-run(host='localhost', port=8080, debug=True)
-#bootstrap misaelangelo
+run(host='0.0.0.0', port='argv[1]', debug=True)
