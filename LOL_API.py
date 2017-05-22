@@ -77,7 +77,7 @@ def event():
   if r3.status_code == 200:
     doc3 = r3.json()
     for o in doc3:
-	if doc3['data'][o]['name'] == name.title():
+	if doc3['data'][o]['name'] == name3.title():
 	   	ID3 = str(doc3['data'][o])
 		
     URL4 = 'https://euw1.api.riotgames.com/lol/static-data/v3/items/'+ID3
