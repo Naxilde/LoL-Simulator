@@ -4,6 +4,7 @@ import requests
 import json
 from sys import argv
 import os
+mykey=os.environ["KEY"]
 
 @get('/')
 def index():
@@ -11,7 +12,6 @@ def index():
 
 @post('/Ficha')
 def event():
-  mykey=os.environ["KEY"]
   payloadCode={"locale":request.forms.get('Language'),'api_key':mykey,'dataByld':'true','champListData':'info'}
   code=requests.get('https://euw1.api.riotgames.com/lol/static-data/v3/champions',params=payloadCode)
   cod = code.json()
