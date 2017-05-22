@@ -60,6 +60,9 @@ def event():
     doc2 = r2.json()
     stats2 = doc2['stats']
     return template('Comparator2.tpl',Info1=stats1,campeon1=doc1['name'],Info2=stats2,campeon2=doc2['name'])
+@get("/Objects")
+def obj():
+	return template('Objects.tpl')
 
 @route('/static/<filepath:path>')
 def server_static(filepath):
