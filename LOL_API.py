@@ -75,10 +75,10 @@ def event():
   URL3 = 'https://euw1.api.riotgames.com/lol/static-data/v3/items'
   r3=requests.get(URL3,params=payload3)
   if r3.status_code == 200:
-    doc3 = o.json()
+    doc3 = r3.json()
     for o in doc3:
-	if doc3['data'][i]['name'] == name.title():
-	   	ID3 = str(doc3['data'][i])
+	if doc3['data'][o]['name'] == name.title():
+	   	ID3 = str(doc3['data'][o])
 		
     URL4 = 'https://euw1.api.riotgames.com/lol/static-data/v3/items/'+ID3
     r4=requests.get(URL4,params=payload3)
