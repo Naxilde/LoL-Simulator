@@ -81,5 +81,8 @@ def event():
 def server_static(filepath):
     return static_file(filepath, root='static')
 
+@error(404)
+def error404(error):
+    return 'Data not found'
 
 run(host='0.0.0.0', port=argv[1])
