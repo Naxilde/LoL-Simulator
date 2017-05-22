@@ -20,8 +20,8 @@
 	  <li class="tab_selected"><a href="/">Champion</a></li>
           <li><a href="/Comparator">Comparator</a></li>
           <li><a href="/Object">Objects</a></li>
-         -- <li><a href="/Runes">Runes</a></li>
-         -- <li><a href="/Masteries">Masteries</a></li>
+         <!-- <li><a href="/Runes">Runes</a></li> -->
+         <!-- <li><a href="/Maestrias">Masteries</a></li> -->
         </ul>
       </div>
     </div>
