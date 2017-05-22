@@ -5,7 +5,7 @@
   <title>LoL Simulator</title>
   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
   <link rel="stylesheet" type="text/css" href="/static/style/style.css" />
-  <link rel="icon" type="image/png" href="/static/images/favicon.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/static/images/favicon.png" size="32x32" />
 </head>
 
 <body>
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div id="site_content">
-      <div id="panel"><img src="/static/images/logo.jpg" alt=logo /></div>
+      <div id="panel"><img src="/static/images/logo.jpg" alt="logo" /></div>
       <div class="sidebar">
         <!-- insert your sidebar items here -->
         <h1>Latest News</h1>
