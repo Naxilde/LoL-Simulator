@@ -38,7 +38,7 @@
           <li><a href="https://developer.riotgames.com/">API web</a></li>
         </ul>
         <h1>Useful Info</h1>
-        <p>The name of the champions must be in mayus and the language by default is en_UK</p>
+        <p>The language by default is en_UK</p>
       </div>
       <div id="content">
         <!-- insert the page content here -->
