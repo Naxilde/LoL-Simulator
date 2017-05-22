@@ -75,8 +75,8 @@ def event():
   r3=requests.get('https://euw1.api.riotgames.com/lol/static-data/v3/items',params=payload3)
   doc3 = r3.json()
   for o in doc3:
-	if doc3['data'][o]['name'] == name3.title():
-          ID3 = str(doc3['data'][o])
+	if doc3['data']['data'][o]['name'] == name3.title():
+          ID3 = str(doc3['data']['data'][o])
 	else:
 		ID3="1001"
 
