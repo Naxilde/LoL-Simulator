@@ -12,11 +12,12 @@ def index():
 
 @post('/Ficha')
 def event():
+  name = request.forms.get('name')
   payloadCode={"locale":request.forms.get('Language'),'api_key':mykey,'dataByld':'true','champListData':'info'}
   code=requests.get('https://euw1.api.riotgames.com/lol/static-data/v3/champions',params=payloadCode)
   cod = code.json()
   for c in cod['data']:
-    if cod['data'][c]['name'] == request.forms.get.title('name'):
+    if cod['data'][c]['name'] == name.title():
       ID = str(cod['data'][c]['id'])
 
   payload = {"locale":request.forms.get('Language'),"champData":'stats','api_key':mykey}
@@ -33,11 +34,12 @@ def com():
 
 @post('/Ficha2')
 def event():
+  name1 = request.forms.get('name1')
   payloadCode1={"locale":request.forms.get('Language'),'api_key':mykey,'dataByld':'true','champListData':'info'}
   code1=requests.get('https://euw1.api.riotgames.com/lol/static-data/v3/champions',params=payloadCode1)
   cod1 = code1.json()
   for c in cod1['data']:
-    if cod1['data'][c]['name'] == request.forms.get.title('name1'):
+    if cod1['data'][c]['name'] == name1.title():
       ID1 = str(cod1['data'][c]['id'])
 
   payload = {"locale":request.forms.get('Language'),"champData":'stats','api_key':mykey}
@@ -47,11 +49,12 @@ def event():
     doc1 = r1.json()
     stats1 = doc1['stats']
 
+  name2 = request.forms.get('name2')
   payloadCode2={"locale":request.forms.get('Language'),'api_key':mykey,'dataByld':'true','champListData':'info'}
   code2=requests.get('https://euw1.api.riotgames.com/lol/static-data/v3/champions',params=payloadCode2)
   cod2 = code2.json()
   for c in cod2['data']:
-    if cod2['data'][c]['name'] == request.forms.get.title('name2'):
+    if cod2['data'][c]['name'] == name2.title():
       ID2 = str(cod2['data'][c]['id'])
 
   URL2 = 'https://euw1.api.riotgames.com/lol/static-data/v3/champions/'+ID2
