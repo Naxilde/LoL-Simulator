@@ -76,7 +76,7 @@ def event():
 	doc3 = r3.json()
 	for o in doc3['data']:
 		if doc3['data'][o]['id'] != 3632:
-			if doc3['data'][o]['name'] == name3:
+			if doc3['data'][o]['name'] == name3.title():
 				ID3 =  str(doc3['data'][o]['id'])
 
 	payload4={"locale":request.forms.get('Language'),'api_key':mykey,'itemData':'all'}
